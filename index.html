@@ -4,56 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colegio Futuro</title>
-
-    <!-- ENLACE AL CSS (CARPETA STYLE) -->
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 
-    <header class="header">
-        <h1>Colegio Futuro</h1>
-        <nav class="nav">
-            <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
+<header class="header">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo Colegio">
+        <span>Colegio Futuro</span>
+    </div>
 
-    <section class="hero">
-        <h2>Educación de Calidad para un Mejor Futuro</h2>
-        <p>
-            Somos una institución educativa comprometida con la formación integral
-            de nuestros estudiantes, fomentando valores, tecnología y excelencia académica.
-        </p>
-    </section>
+    <nav class="nav" id="nav">
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
 
-    <section class="cards">
-        <div class="card">
-            <h3>Docentes Capacitados</h3>
-            <p>Profesores con experiencia y vocación al servicio de nuestros alumnos.</p>
-        </div>
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+</header>
 
-        <div class="card">
-            <h3>Infraestructura Moderna</h3>
-            <p>Ambientes seguros, tecnológicos y adecuados para el aprendizaje.</p>
-        </div>
+<section class="hero">
+    <img src="img/colegio.jpg" alt="Imagen del colegio">
+    <div class="hero-text">
+        <h1>Educación de Calidad para el Futuro</h1>
+        <p>Formamos estudiantes con valores, conocimiento y tecnología.</p>
+    </div>
+</section>
 
-        <div class="card">
-            <h3>Formación Integral</h3>
-            <p>Educación académica, valores y desarrollo personal.</p>
-        </div>
-    </section>
+<section class="cards">
+    <div class="card">
+        <h3>Docentes Calificados</h3>
+        <p>Profesionales comprometidos con la enseñanza.</p>
+    </div>
 
-    <section class="cta">
-        <h2>Forma parte de nuestra comunidad educativa</h2>
-        <p>Contáctanos y conoce más sobre nuestra propuesta educativa.</p>
-        <button>Solicitar Información</button>
-    </section>
+    <div class="card">
+        <h3>Infraestructura Moderna</h3>
+        <p>Ambientes seguros y tecnológicos.</p>
+    </div>
 
-    <footer class="footer">
-        <p>© 2025 Colegio Futuro | Todos los derechos reservados</p>
-    </footer>
+    <div class="card">
+        <h3>Formación Integral</h3>
+        <p>Educación académica y valores humanos.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2025 Colegio Futuro | Todos los derechos reservados</p>
+</footer>
+
+<!-- JAVASCRIPT DEL MENÚ -->
+<script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
+
