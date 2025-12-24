@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Biométrico Escolar</title>
+    <link rel="stylesheet" href="style/stiloregistro.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header class="barra-superior">
+        <div class="logo">🏫 Colegio Futuro - Control Biométrico</div>
+        <div class="estado-sistema" id="estadoCarga">🟠 Cargando IA...</div>
+    </header>
+
+    <div class="contenedor-principal">
+        
+        <section class="panel-escaner">
+            <div class="marco-camara">
+                <video id="video" autoplay muted></video>
+            </div>
+
+            <div class="panel-botones">
+                <div class="selector-modo">
+                    <button id="btnModoAsistencia" class="btn-modo activo">📡 Escanear</button>
+                    <button id="btnModoRegistro" class="btn-modo">👤 Registrar Nuevo</button>
+                </div>
+
+                <div id="controlTipo" class="control-tipo">
+                    <p class="titulo-tipo">¿Qué vamos a registrar?</p>
+                    <div class="opciones-tipo">
+                        <label class="opcion-radio">
+                            <input type="radio" name="tipoAsistencia" value="entrada" checked>
+                            <span class="texto-radio">🌞 Entrada</span>
+                        </label>
+                        <label class="opcion-radio">
+                            <input type="radio" name="tipoAsistencia" value="salida">
+                            <span class="texto-radio">🌙 Salida</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="formRegistro" class="formulario-registro" style="display: none;">
+                    <input type="text" id="nombrePersona" placeholder="Nombre Completo">
+                    <select id="rolPersona">
+                        <option value="Alumno">Alumno</option>
+                        <option value="Docente">Docente</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                    <button id="btnGuardarCara" class="btn-guardar">📸 Guardar Rostro</button>
+                </div>
+
+                <p class="instruccion" id="mensajeInstruccion">Selecciona Entrada o Salida...</p>
+            </div>
+        </section>
+
+        <section class="panel-historial">
+            <div class="cabecera-lista">
+                <h2>📋 Registros de Hoy</h2>
+                <button class="btn-limpiar" onclick="limpiarTabla()">🗑️ Limpiar</button>
+            </div>
+            
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Tipo</th> </tr>
+                    </thead>
+                    <tbody id="tabla-asistencia-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
